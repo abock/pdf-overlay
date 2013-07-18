@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+ASM=bin/Debug/PdfOverlay.exe
+
+if [ ! -f $ASM ]; then
+	make
+fi
+
+mono --debug bin/Debug/PdfOverlay.exe "$@"
